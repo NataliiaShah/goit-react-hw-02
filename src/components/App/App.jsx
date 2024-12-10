@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Description from "../Description/Description";
 import Feedback from "../Feedback/Feedback";
@@ -10,19 +9,26 @@ const App = () => {
     good: 0,
     neutral: 0,
     bad: 0
-  });
+    });
+    
+    const handleFeedbackChange = (feedbackType) => {
+        setFeedback(prevState => ({
+        ...prevState, [feedbackType]
+        : prevState[feedbackType] + 1,
+    }));
+  };
 
     return (
         <>
             <Description />
+            <Options onFeedbackChange={handleFeedbackChange} />
             <Feedback feedback={feedback} />
-            <Options />
         </>
     );
 };
-
 
 export default App;
 
 
 
+	
