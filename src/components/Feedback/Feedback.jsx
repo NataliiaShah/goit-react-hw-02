@@ -1,11 +1,12 @@
 
 
-const Feedback = ({feedback}) => {
+const Feedback = ({feedback, feedbackTotal}) => {
   return (
     <>
-        <p>❤️ Good feedback: {feedback.good}</p>
+        <p>❤️ Good: {feedback.good}</p>
         <p>😒 Neutral: {feedback.neutral}</p>
         <p>😢 Bad: {feedback.bad}</p>
+        <p>🤩 Total: {feedbackTotal}</p>
       
     </>
   );
