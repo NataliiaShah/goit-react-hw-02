@@ -1,20 +1,22 @@
+import style from "../Options/Options.module.css"
+
 const Options = ({ onFeedbackChange, totalFeedback, onReset }) => {
     return (
         <div>
-            <ul>
+            <ul className={style.buttonList}>
                 <li>
-                    <button onClick={() => onFeedbackChange("good")}>Good</button>
+                    <button className={style.mainButton} onClick={() => onFeedbackChange("good")}>Good</button>
                 </li>
                 <li>
-                    <button onClick={() => onFeedbackChange("neutral")}>Neutral</button>
+                    <button className={style.mainButton} onClick={() => onFeedbackChange("neutral")}>Neutral</button>
                 </li>
                 <li>
-                    <button onClick={() => onFeedbackChange("bad")}>Bad</button>
+                    <button className={style.mainButton} onClick={() => onFeedbackChange("bad")}>Bad</button>
                 </li>
                 <li>
                     
                     {totalFeedback > 0 && (
-                        <button onClick={onReset}>Reset</button>
+                        <button className={style.mainButton} onClick={onReset}>Reset</button>
                     )}
                 </li>
             </ul>

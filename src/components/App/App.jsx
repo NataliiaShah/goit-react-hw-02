@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Description from "../components/Description/Description";
-import Feedback from "../components/Feedback/Feedback";
-import Options from "../components/Options/Options";
-import Notification from "../components/Notification/Notification";
+import Description from "../Description/Description";
+import Feedback from "../Feedback/Feedback";
+import Options from "../Options/Options";
+import Notification from "../Notification/Notification";
+import style from "./App.module.css";
 
 const App = () => {
     const [feedback, setFeedback] = useState({
@@ -31,7 +32,7 @@ const App = () => {
     ((feedback.good + feedback.neutral) / totalFeedback) * 100
   );
     return (
-        <>
+        <div className = {style.container}>
             <Description />
             <Options 
                 onFeedbackChange={handleFeedbackChange} 
@@ -47,7 +48,7 @@ const App = () => {
       ) : (
         <Notification message="No feedback yet 😿" />
       )}
-    </>
+    </div>
   );
 };
 

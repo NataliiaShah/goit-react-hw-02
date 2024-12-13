@@ -1,14 +1,17 @@
-
+import style from "../Feedback/Feedback.module.css";
 
 const Feedback = ({feedback, feedbackTotal, feedbackPositive}) => {
   return (
     <>
-        <p>❤️ Good: {feedback.good}</p>
-        <p>😒 Neutral: {feedback.neutral}</p>
-        <p>😢 Bad: {feedback.bad}</p>
-        <p>🤩 Total: {feedbackTotal}</p>
-        <p>💕 Positive: {feedbackPositive}%</p>
-      
+    <div className={style.divContainer}>
+        <p className={style.feedbackParagraf}>❤️ Good: {feedback.good}</p>
+        <p className={style.feedbackParagraf}>😒 Neutral: {feedback.neutral}</p>
+        <p className={style.feedbackParagraf}>😢 Bad: {feedback.bad}</p>
+      </div>
+      <div className={style.divContainer}>
+        <p className={style.feedbackParagraf}>🤩 Total: {feedbackTotal}</p>
+        <p className={style.feedbackParagraf}>💕 Positive: {feedbackPositive}%</p>
+      </div>
     </>
   );
 };
